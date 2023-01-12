@@ -219,7 +219,7 @@ function getListItem(index, search, marker) {
 
 	itemStr += '<span class="tel">' +search.foodstroe_num  + '</span>'
 	itemStr += '<span class="typ">' +search.foodcategory_code + '</span>'
-	itemStr += '<img src = search.img_url  enctype="multipart/form-data" style="float:right">'
+	itemStr += '<img src =' + `${search.img_url}` + 'enctype="multipart/form-data" width=100 style="float:right">'
 			+ '</div>';
 	
 	el.innerHTML = itemStr;
