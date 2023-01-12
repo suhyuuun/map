@@ -218,11 +218,8 @@ function getListItem(index, search, marker) {
 	}
 
 	itemStr += '<span class="tel">' +search.foodstroe_num  + '</span>'
-
-			
 	itemStr += '<span class="typ">' +search.foodcategory_code + '</span>'
-	
-	itemStr += '<img src = searchs.img_url  enctype="multipart/form-data" style="float:right">'
+	itemStr += '<img src = search.img_url  enctype="multipart/form-data" style="float:right">'
 			+ '</div>';
 	
 	el.innerHTML = itemStr;
@@ -287,7 +284,7 @@ function displayPagination(totalPage, total, blocksize, pageNo) {
 		// if (blockpage == pageNo)
 		// paginationEl.insertAdjacentHTML("beforeEnd", " <span
 		// style='cursor:default;'><b>"
-		// + blockpage + "</b></span> ");
+		// + blockpage + "</b></span> ");s
 		// else
 		paginationEl.insertAdjacentHTML("beforeEnd",
 				" <span style='cursor:pointer;'" + "onClick='pageSearch("

@@ -48,7 +48,7 @@
 		</div>
 	</div>
 	<div id="menu_wrap" class="bg_white">		
-			<hr />
+<!-- 			<hr /> -->
 			<ul id="placesList"></ul>
 			<div id="pagination"></div>
    </div>
