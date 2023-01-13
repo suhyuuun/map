@@ -206,12 +206,18 @@ function getListItem(index, search, marker) {
 	itemStr = '<span class="markerbg marker_'
 			+ (index + 1)
 			+ '"></span>'
-			
+			+ '<a href="detailpage.do?latitude=' + `${search.latitude}` + '&longitude=' + `${search.longitude}` 
+	itemStr += '&foodtype=' + `${search.foodtype}`.replace(" ","+")
+	itemStr += '&img_url=' + `${search.img_url}`.replace(" ","+") 
+	itemStr += '&foodstore_id=' + `${search.foodstore_id}`.replace(" ","+")
+	itemStr += '&foodstroe_num=' + `${search.foostroe_num}`.replace(" ","+") 
+	itemStr += '&road_name=' + `${search.road_name}`.replace(" ","+")
+	itemStr += '&rate=' + `${search.rate}`.replace(" ","+")
+	itemStr += '&openinghours=' + `${search.openinghours}`.replace(" ","+")
+	itemStr += '">' 
 			+ '<div class="info">'
-			+ '<a href="detailpage.do?latitude=' + `${search.latitude}` + '&longitude=' + `${search.longitude}` + '&foodstroe_num=' + `${search.foodstroe_num}` + '">' 
 			+ '<h5>'
 			+ search.foodstore_id + '</h5>'
-			+ '</a>';
 	itemStr += '<span>' + search.address + '</span>';
 	
 
@@ -219,6 +225,7 @@ function getListItem(index, search, marker) {
 	itemStr += '<span class="typ">' +search.foodtype + '</span>'
 	itemStr += '<img src =' + `${search.img_url}` + ' enctype="multipart/form-data" width=100 style="float:right">'
 			+ '</div>';
+			+ '</a>';
 	
 	el.innerHTML = itemStr;
 	el.className = 'item';
