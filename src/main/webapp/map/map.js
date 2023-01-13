@@ -210,7 +210,7 @@ function getListItem(index, search, marker) {
 	itemStr += '&foodtype=' + `${search.foodtype}`.replace(" ","+")
 	itemStr += '&img_url=' + `${search.img_url}`.replace(" ","+") 
 	itemStr += '&foodstore_id=' + `${search.foodstore_id}`.replace(" ","+")
-	itemStr += '&foodstroe_num=' + `${search.foostroe_num}`.replace(" ","+") 
+	itemStr += '&foodstroe_num=' + `${search.foostroe_num}`.replace(" ","+")
 	itemStr += '&road_name=' + `${search.road_name}`.replace(" ","+")
 	itemStr += '&rate=' + `${search.rate}`.replace(" ","+")
 	itemStr += '&openinghours=' + `${search.openinghours}`.replace(" ","+")
