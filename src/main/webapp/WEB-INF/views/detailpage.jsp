@@ -65,7 +65,7 @@
 										<p id="shop-phone">${foodstroe_num}</p>
 									</div>
 									<div class="shop-etc">
-										<p id="shop-close">${openinghousrs}</p>
+										<p id="shop-close">${openinghours}</p>
 										<p id="shop-etc">예약불가, 배달불가, 포장불가</p>
 									</div>
 								</div>
