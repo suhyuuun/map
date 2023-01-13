@@ -28,4 +28,9 @@ public class LibDaoImp  implements LibDao{
 	public int lib_countAll(String data) {
 		return sqlSession.selectOne("lib.lib_countAll",data);
 	}
+
+	@Override
+	public List<LibmapDTO> list(LibmapDTO pv) {
+		return sqlSession.selectList("lib.list",pv);
+	}
 }

@@ -202,24 +202,22 @@ function displayPlaces(search) {
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, search, marker) {
 
-	var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
+	var el = document.createElement('li'),
+	itemStr = '<span class="markerbg marker_'
 			+ (index + 1)
 			+ '"></span>'
+			
 			+ '<div class="info">'
-			+ '   <h5>'
-			+ search.foodstore_id + '</h5>';
-
-	if (search.newAddress) {
-		itemStr += '<span>' + search.address + '</span>'
-				+ '<span class="jibun gray">' + search.address
-				+ '</span>';
-	} else {
-		itemStr += '<span>' + search.address + '</span>';
-	}
+			+ '<a href="detailpage.do?latitude=' + `${search.latitude}` + '&longitude=' + `${search.longitude}` + '&foodstroe_num=' + `${search.foodstroe_num}` + '">' 
+			+ '<h5>'
+			+ search.foodstore_id + '</h5>'
+			+ '</a>';
+	itemStr += '<span>' + search.address + '</span>';
+	
 
 	itemStr += '<span class="tel">' +search.foodstroe_num  + '</span>'
-	itemStr += '<span class="typ">' +search.foodcategory_code + '</span>'
-	itemStr += '<img src =' + `${search.img_url}` + 'enctype="multipart/form-data" width=100 style="float:right">'
+	itemStr += '<span class="typ">' +search.foodtype + '</span>'
+	itemStr += '<img src =' + `${search.img_url}` + ' enctype="multipart/form-data" width=100 style="float:right">'
 			+ '</div>';
 	
 	el.innerHTML = itemStr;
@@ -284,7 +282,7 @@ function displayPagination(totalPage, total, blocksize, pageNo) {
 		// if (blockpage == pageNo)
 		// paginationEl.insertAdjacentHTML("beforeEnd", " <span
 		// style='cursor:default;'><b>"
-		// + blockpage + "</b></span> ");s
+		// + blockpage + "</b></span> ");
 		// else
 		paginationEl.insertAdjacentHTML("beforeEnd",
 				" <span style='cursor:pointer;'" + "onClick='pageSearch("
@@ -303,7 +301,7 @@ function displayInfowindow(marker, title, searchs) {
 	var content = '<div class ="f_main"><div id="f_date">' + '<img src =' + `${searchs.img_url}` +' enctype="multipart/form-data" width=50 style="float:left">' +'</div>'
 			+ '<div class="f_header" style="text-align:right">' + searchs.foodstore_id
 			+ '</div>' + '<div id="f_date" style="text-align:right">' + searchs.foodstroe_num 
-			+ '</div>' + '<div id="f_date" style="text-align:right">' + searchs.foodcategory_code
+			+ '</div>' + '<div id="f_date" style="text-align:right">' + searchs.foodtype
 			+ '</div>' + '<div id="f_number">'
 			+ searchs.address + '</div></div>'; 
 

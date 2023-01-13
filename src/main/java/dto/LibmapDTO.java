@@ -16,9 +16,26 @@ public class LibmapDTO {
 	private String longitude;
 	private String foodstroe_num;
 	private String img_url;
+	private String rate;
+	private String openinghours;
 
 	public LibmapDTO() {
 		// TODO Auto-generated constructor stub
+	}
+	public String getOpeninghours() {
+		return openinghours;
+	}
+
+	public void setOpeninghours(String openinghours) {
+		this.openinghours = openinghours;
+	}
+
+	public String getRate() {
+		return rate;
+	}
+
+	public void setRate(String rate) {
+		this.rate = rate;
 	}
 
 	public String getFoodstore_id() {
@@ -132,5 +149,5 @@ public class LibmapDTO {
 	public void setImg_url(String img_url) {
 		this.img_url = img_url;
 	}
-	
+
 }
