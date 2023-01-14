@@ -26,7 +26,6 @@
 					<button type="submit">검색하기</button>
 				</form>
 			</div>	
-		</div>
 	<div class="map_wrap" >
 		<div id="map"
 			style="display: block; margin: 0 auto; width: 60%; height: 99%; position: relative; overflow: hidden;"></div>
@@ -48,7 +47,6 @@
 		</div>
 	</div>
 	<div id="menu_wrap" class="bg_white">		
-<!-- 			<hr /> -->
 			<ul id="placesList"></ul>
 			<div id="pagination"></div>
    </div>
