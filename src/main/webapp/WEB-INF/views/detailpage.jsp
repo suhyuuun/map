@@ -43,7 +43,7 @@
 										</div>
 										<div class="col-3 shop-category">
 											<!-- 1차/2차 카테고리 -->
-											<p id="shop-category">${foodcategory}</p>
+											<p id="shop-category">${foodtype}</p>
 
 										</div>
 										<div class="d-flex col-2" id='div-shop-rating'>
