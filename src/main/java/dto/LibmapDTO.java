@@ -19,18 +19,37 @@ public class LibmapDTO {
 	private String rate;
 	private String openinghours;
 	private String res_num;
+	private String menu_pricesearch;
+	private String menu_namesearch;
 
 	public LibmapDTO() {
-		// TODO Auto-generated constructor stub
+
 	}
-	
+
+	public String getMenu_pricesearch() {
+		return menu_pricesearch;
+	}
+
+	public void setMenu_pricesearch(String menu_pricesearch) {
+		this.menu_pricesearch = menu_pricesearch;
+	}
+
+	public String getMenu_namesearch() {
+		return menu_namesearch;
+	}
+
+	public void setMenu_namesearch(String menu_namesearch) {
+		this.menu_namesearch = menu_namesearch;
+	}
+
 	public String getRes_num() {
 		return res_num;
 	}
+
 	public void setRes_num(String res_num) {
 		this.res_num = res_num;
 	}
-	
+
 	public String getOpeninghours() {
 		return openinghours;
 	}

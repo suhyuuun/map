@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.net.URLDecoder" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@
 						<div
 							class="col-9 container shop-left column-row py-2 px-0 ms-0 me-0">
 							<div class="shop-main-image">
-								<img src='${img_url}' id="shop-main-image"/>
+								<img src='${img_url}' id="shop-main-image" />
 							</div>
 							<div class="shop-info-body column-row p-4">
 								<div class="row">
@@ -78,26 +79,14 @@
 								</div>
 								<div class="d-flex">
 									<div class="col-9" id="shop-menu-detail">
-										<p id="shop-menu-detail">소금구이 (1인분)(150g)</p>
-										<p id="shop-menu-detail">전통평양냉면</p>
-										<p id="shop-menu-detail">전통평양비빔냉면</p>
-										<p id="shop-menu-detail">온면</p>
-										<p id="shop-menu-detail">김치말이냉면</p>
-										<p id="shop-menu-detail">장국밥</p>
-										<p id="shop-menu-detail">9개까지</p>
-										<p id="shop-menu-detail">넘어가면</p>
-										<p id="shop-menu-detail">안보임</p>
+										<c:forTokens var="item" items="${menu_namesearch}" delims="z">
+											<p>${item}</p>
+										</c:forTokens>
 									</div>
 									<div class="col-3" id="shop-menu-price">
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">16,000원</p>
-										<p id="shop-menu-price">15,000원</p>
-										<p id="shop-menu-price">15,000원</p>
-										<p id="shop-menu-price">15,000원</p>
-										<p id="shop-menu-price">0,000원</p>
+										<c:forTokens var="item" items="${menu_pricesearch}" delims="z">
+											<p>${item}</p>
+										</c:forTokens>
 									</div>
 								</div>
 							</div>
@@ -111,6 +100,7 @@
 		var lat = '${latitude}';
 		var lng = '${longitude}';
 	</script>
+
 	<script src=js/detail_page.js></script>
 </body>
 </html>

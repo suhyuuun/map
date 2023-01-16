@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,9 +31,9 @@ public class MapController {
 		this.service = service;
 	}
 
-	public void setPv(LibmapDTO pv) {
-		this.pv = pv;
-	}
+//	public void setPv(LibmapDTO pv) {
+//		this.pv = pv;
+//	}
 
 	@RequestMapping("/map.do")
 	public String mapFrom() {
@@ -66,7 +68,7 @@ public class MapController {
 //	}// detailpageMethod()
 
 	@RequestMapping("/detailpage.do")
-	public String detailpageMethod(HttpServletRequest httpServletRequest, Model model) {
+	public String detailpageMethod(HttpServletRequest httpServletRequest, Model model) throws UnsupportedEncodingException {
 		String latitude = httpServletRequest.getParameter("latitude");
 		String longitude = httpServletRequest.getParameter("longitude");
 		String foodtype = httpServletRequest.getParameter("foodtype");
@@ -74,9 +76,13 @@ public class MapController {
 		String foodstore_id = httpServletRequest.getParameter("foodstore_id");
 		String foodstroe_num = httpServletRequest.getParameter("foodstroe_num");
 		String road_name = httpServletRequest.getParameter("road_name");
-		String rate = httpServletRequest.getParameter("rate");
 		String openinghours = httpServletRequest.getParameter("openinghours");
+		String menu_namesearch = URLDecoder.decode(httpServletRequest.getParameter("menu_namesearch"), "UTF-8");
+		String menu_pricesearch = URLDecoder.decode(httpServletRequest.getParameter("menu_pricesearch"), "UTF-8");
+//		String menu_namesearch = httpServletRequest.getParameter("menu_namesearch");
+//		String menu_pricesearch = httpServletRequest.getParameter("menu_pricesearch");
 
+		
 		model.addAttribute("latitude", latitude);
 		model.addAttribute("longitude", longitude);
 		model.addAttribute("foodtype", foodtype);
@@ -84,8 +90,10 @@ public class MapController {
 		model.addAttribute("foodstore_id", foodstore_id);
 		model.addAttribute("foodstroe_num", foodstroe_num);
 		model.addAttribute("road_name", road_name);
-		model.addAttribute("rate", rate);
 		model.addAttribute("openinghours", openinghours);
+		model.addAttribute("menu_namesearch", menu_namesearch);
+		model.addAttribute("menu_pricesearch",menu_pricesearch);
+		
 		return "detailpage";
 	}//end detailpageMethod()
 }

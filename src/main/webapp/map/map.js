@@ -1,4 +1,4 @@
-//기본값 저장
+//기본값저장
 var keyword;
 var pageNo;
 var totalPage;
@@ -212,13 +212,14 @@ function getListItem(index, search, marker) {
 	itemStr += '&foodstore_id=' + `${search.foodstore_id}`.replace(" ","+")
 	itemStr += '&foodstroe_num=' + `${search.foodstroe_num}`.replace(" ","+")
 	itemStr += '&road_name=' + `${search.road_name}`.replace(" ","+")
-	itemStr += '&rate=' + `${search.rate}`.replace(" ","+")
 	itemStr += '&openinghours=' + `${search.openinghours}`.replace(" ","+")
+	itemStr += '&menu_namesearch=' + `${search.menu_namesearch}`
+	itemStr += '&menu_pricesearch=' + `${search.menu_pricesearch}`
 	itemStr += '">' 
 			+ '<div class="info">'
 			+ '<h5>'
 			+ search.foodstore_id + '</h5>'
-	itemStr += '<span>' + search.address + '</span>';
+	itemStr += '<span>' + search.road_name + '</span>';
 	
 
 	itemStr += '<span class="tel">' +search.foodstroe_num  + '</span>'
