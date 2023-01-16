@@ -11,6 +11,7 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=85e3a2b784700813659ca3ae8da46d29"></script>
 <script defer src="map/map.js"></script>
+<!-- <script defer src="map/map_prac.js"></script> -->
 <link rel="stylesheet" href="map/map.css">
 </head>
 <body>

@@ -33,4 +33,9 @@ public class LibDaoImp  implements LibDao{
 	public List<LibmapDTO> list(LibmapDTO pv) {
 		return sqlSession.selectList("lib.list",pv);
 	}
+
+	@Override
+	public List<LibmapDTO> list_match(String res_num) {
+		return sqlSession.selectList("lib.list_match",res_num);
+	}
 }

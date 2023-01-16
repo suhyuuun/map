@@ -38,5 +38,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/big_study/util/apache-tomcat-9.0.68/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
 	<classpathentry kind="lib" path="D:/big_study/util/apache-tomcat-9.0.68/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/big-study/util/apache-tomcat-9.0.69/apache-tomcat-9.0.46/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/big-study/util/apache-tomcat-9.0.69/apache-tomcat-9.0.46/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

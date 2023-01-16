@@ -18,10 +18,19 @@ public class LibmapDTO {
 	private String img_url;
 	private String rate;
 	private String openinghours;
+	private String res_num;
 
 	public LibmapDTO() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public String getRes_num() {
+		return res_num;
+	}
+	public void setRes_num(String res_num) {
+		this.res_num = res_num;
+	}
+	
 	public String getOpeninghours() {
 		return openinghours;
 	}

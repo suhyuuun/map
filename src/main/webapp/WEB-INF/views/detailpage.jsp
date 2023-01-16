@@ -66,7 +66,6 @@
 									</div>
 									<div class="shop-etc">
 										<p id="shop-close">${openinghours}</p>
-										<p id="shop-etc">예약불가, 배달불가, 포장불가</p>
 									</div>
 								</div>
 							</div>

@@ -27,6 +27,13 @@
 	select *
 	from seoulfoodsample
 	</select>
+	
+		<select id="list_match" parameterType="string"
+		resultType="dto.LibmapDTO">
+		SELECT *
+		FROM seoulfoodsample
+		WHERE res_num = #{res_num}
+	</select>
 
 </mapper>   
 

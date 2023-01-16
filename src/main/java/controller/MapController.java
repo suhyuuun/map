@@ -19,13 +19,18 @@ import service.LibService;
 @Controller
 public class MapController {
 	private LibService service;
-
+//	private LibmapDTO pv;
+//	String res_num;
 	public MapController() {
 
 	}
 
 	public void setService(LibService service) {
 		this.service = service;
+	}
+
+	public void setPv(LibmapDTO pv) {
+		this.pv = pv;
 	}
 
 	@RequestMapping("/map.do")
@@ -35,19 +40,30 @@ public class MapController {
 
 	@ResponseBody
 	@RequestMapping(value = "/libmap.do", method = RequestMethod.POST)
-	public ModelAndView libraryMap(int pageNo, int pageSize, String keyword, ModelAndView mav) {
+	public ModelAndView libraryMap(int pageNo, int pageSize, String keyword, String res_num, ModelAndView mav) {
 		int countAll = service.f_countAllProcess(keyword);
 		int totalPage = countAll / pageSize;
 		if ((countAll % pageSize) > 0)
 			totalPage++;
 
-		List<LibmapDTO> aList = service.f_listProcess(pageNo, pageSize, keyword);
+		List<LibmapDTO> aList = service.f_listProcess(pageNo, pageSize, keyword, res_num);
 		mav.addObject("aList", aList);
 		mav.addObject("pageNo", pageNo);
 		mav.addObject("totalPage", totalPage);
 		mav.setViewName("jsonView");
 		return mav;
 	}
+
+//	@RequestMapping(value = "/detailpage_aList.do")
+//	public ModelAndView detailpageMethod(LibmapDTO pv, ModelAndView mav) {
+//
+//		this.pv = new LibmapDTO();
+//		List<LibmapDTO> aList = service.f_list_match(res_num);
+//		mav.addObject("aList", aList);
+//		mav.addObject("res_num",res_num);
+//		mav.setViewName("detailpage_aList");
+//		return mav;
+//	}// detailpageMethod()
 
 	@RequestMapping("/detailpage.do")
 	public String detailpageMethod(HttpServletRequest httpServletRequest, Model model) {
@@ -71,6 +87,5 @@ public class MapController {
 		model.addAttribute("rate", rate);
 		model.addAttribute("openinghours", openinghours);
 		return "detailpage";
-	}
-
+	}//end detailpageMethod()
 }
