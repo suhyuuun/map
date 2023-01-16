@@ -79,12 +79,12 @@
 								</div>
 								<div class="d-flex">
 									<div class="col-9" id="shop-menu-detail">
-										<c:forTokens var="item" items="${menu_namesearch}" delims="z">
+										<c:forTokens var="item" items="${menu_namesearch}" delims="/">
 											<p>${item}</p>
 										</c:forTokens>
 									</div>
 									<div class="col-3" id="shop-menu-price">
-										<c:forTokens var="item" items="${menu_pricesearch}" delims="z">
+										<c:forTokens var="item" items="${menu_pricesearch}" delims="/">
 											<p>${item}</p>
 										</c:forTokens>
 									</div>
