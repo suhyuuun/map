@@ -27,7 +27,7 @@
 	select *
 	from seoulfoodsample
 	</select>
-
+	
 </mapper>   
 
 
