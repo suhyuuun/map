@@ -21,8 +21,6 @@ import service.LibService;
 @Controller
 public class MapController {
 	private LibService service;
-//	private LibmapDTO pv;
-//	String res_num;
 	public MapController() {
 
 	}
@@ -31,14 +29,10 @@ public class MapController {
 		this.service = service;
 	}
 
-//	public void setPv(LibmapDTO pv) {
-//		this.pv = pv;
-//	}
-
 	@RequestMapping("/map.do")
 	public String mapFrom() {
 		return "map";
-	}
+	}//end libraryMap()
 
 	@ResponseBody
 	@RequestMapping(value = "/libmap.do", method = RequestMethod.POST)
@@ -54,18 +48,7 @@ public class MapController {
 		mav.addObject("totalPage", totalPage);
 		mav.setViewName("jsonView");
 		return mav;
-	}
-
-//	@RequestMapping(value = "/detailpage_aList.do")
-//	public ModelAndView detailpageMethod(LibmapDTO pv, ModelAndView mav) {
-//
-//		this.pv = new LibmapDTO();
-//		List<LibmapDTO> aList = service.f_list_match(res_num);
-//		mav.addObject("aList", aList);
-//		mav.addObject("res_num",res_num);
-//		mav.setViewName("detailpage_aList");
-//		return mav;
-//	}// detailpageMethod()
+	}//end libraryMap()
 
 	@RequestMapping("/detailpage.do")
 	public String detailpageMethod(HttpServletRequest httpServletRequest, Model model) throws UnsupportedEncodingException {
@@ -77,12 +60,10 @@ public class MapController {
 		String foodstroe_num = httpServletRequest.getParameter("foodstroe_num");
 		String road_name = httpServletRequest.getParameter("road_name");
 		String openinghours = httpServletRequest.getParameter("openinghours");
+		String rate = httpServletRequest.getParameter("rate");
 		String menu_namesearch = URLDecoder.decode(httpServletRequest.getParameter("menu_namesearch"), "UTF-8");
 		String menu_pricesearch = URLDecoder.decode(httpServletRequest.getParameter("menu_pricesearch"), "UTF-8");
-//		String menu_namesearch = httpServletRequest.getParameter("menu_namesearch");
-//		String menu_pricesearch = httpServletRequest.getParameter("menu_pricesearch");
 
-		
 		model.addAttribute("latitude", latitude);
 		model.addAttribute("longitude", longitude);
 		model.addAttribute("foodtype", foodtype);
@@ -91,6 +72,7 @@ public class MapController {
 		model.addAttribute("foodstroe_num", foodstroe_num);
 		model.addAttribute("road_name", road_name);
 		model.addAttribute("openinghours", openinghours);
+		model.addAttribute("rate", rate);
 		model.addAttribute("menu_namesearch", menu_namesearch);
 		model.addAttribute("menu_pricesearch",menu_pricesearch);
 		

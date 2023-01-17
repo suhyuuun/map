@@ -213,8 +213,8 @@ function getListItem(index, search, marker) {
 	itemStr += '&foodstroe_num=' + `${search.foodstroe_num}`.replace(" ","+")
 	itemStr += '&road_name=' + `${search.road_name}`.replace(" ","+")
 	itemStr += '&openinghours=' + `${search.openinghours}`.replace(" ","+")
-	itemStr += '&menu_namesearch=' + `${search.menu_namesearch}`
-	itemStr += '&menu_pricesearch=' + `${search.menu_pricesearch}`
+	itemStr += '&menu_namesearch=' + `${search.menu_namesearch}`.replace(" ","+")
+	itemStr += '&menu_pricesearch=' + `${search.menu_pricesearch}`.replace(" ","+")
 	itemStr += '">' 
 			+ '<div class="info">'
 			+ '<h5>'
@@ -311,7 +311,7 @@ function displayInfowindow(marker, title, searchs) {
 			+ '</div>' + '<div id="f_date" style="text-align:right">' + searchs.foodstroe_num 
 			+ '</div>' + '<div id="f_date" style="text-align:right">' + searchs.foodtype
 			+ '</div>' + '<div id="f_number">'
-			+ searchs.address + '</div></div>'; 
+			+ searchs.road_name + '</div></div>'; 
 
 	// content의 내용을 인포윈도우에 등록
 	infowindow.setContent(content);
