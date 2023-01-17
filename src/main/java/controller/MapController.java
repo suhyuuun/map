@@ -36,13 +36,13 @@ public class MapController {
 
 	@ResponseBody
 	@RequestMapping(value = "/libmap.do", method = RequestMethod.POST)
-	public ModelAndView libraryMap(int pageNo, int pageSize, String keyword, String res_num, ModelAndView mav) {
+	public ModelAndView libraryMap(int pageNo, int pageSize, String keyword, ModelAndView mav) {
 		int countAll = service.f_countAllProcess(keyword);
 		int totalPage = countAll / pageSize;
 		if ((countAll % pageSize) > 0)
 			totalPage++;
 
-		List<LibmapDTO> aList = service.f_listProcess(pageNo, pageSize, keyword, res_num);
+		List<LibmapDTO> aList = service.f_listProcess(pageNo, pageSize, keyword);
 		mav.addObject("aList", aList);
 		mav.addObject("pageNo", pageNo);
 		mav.addObject("totalPage", totalPage);

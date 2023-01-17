@@ -18,12 +18,11 @@ public class LibServiceImp  implements LibService{
 	}
 
 	@Override
-	public List<LibmapDTO> f_listProcess(int pageNo, int pageSize, String keyword, String res_num) {
+	public List<LibmapDTO> f_listProcess(int pageNo, int pageSize, String keyword) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("startpage", ((pageNo - 1) * pageSize)+1);
 		map.put("endpage", pageNo * pageSize);
 		map.put("keyword", keyword); //키워드
-		map.put("res_num", res_num);
 		return dao.lib_list(map);
 	}
 
@@ -37,11 +36,11 @@ public class LibServiceImp  implements LibService{
 //		return dao.list(pv);
 //	}
 
-	@Override
-	public List<LibmapDTO> f_list_match(String res_num) {
-		return dao.list_match(res_num);
-	}
-	
+//	@Override
+//	public List<LibmapDTO> f_list_match(String res_num) {
+//		return dao.list_match(res_num);
+//	}
+//	
 	
 	
 	
