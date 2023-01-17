@@ -32,10 +32,10 @@ public class LibServiceImp  implements LibService{
 		return dao.lib_countAll(data);
 	}
 
-	@Override
-	public List<LibmapDTO> f_list(LibmapDTO pv) {
-		return dao.list(pv);
-	}
+//	@Override
+//	public List<LibmapDTO> f_list(LibmapDTO pv) {
+//		return dao.list(pv);
+//	}
 
 	@Override
 	public List<LibmapDTO> f_list_match(String res_num) {

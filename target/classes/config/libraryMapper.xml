@@ -22,11 +22,11 @@
 			 ]]>
 	</select>
 
-	<select id="list" parameterType="dto.LibmapDTO"
-		resultType="dto.LibmapDTO">
-	select *
-	from seoulfoodsample
-	</select>
+<!-- 	<select id="list" parameterType="dto.LibmapDTO" -->
+<!-- 		resultType="dto.LibmapDTO"> -->
+<!-- 	select * -->
+<!-- 	from seoulfoodsample -->
+<!-- 	</select> -->
 	
 </mapper>   
 

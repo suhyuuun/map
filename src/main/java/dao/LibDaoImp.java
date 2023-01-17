@@ -29,10 +29,10 @@ public class LibDaoImp  implements LibDao{
 		return sqlSession.selectOne("lib.lib_countAll",data);
 	}
 
-	@Override
-	public List<LibmapDTO> list(LibmapDTO pv) {
-		return sqlSession.selectList("lib.list",pv);
-	}
+//	@Override
+//	public List<LibmapDTO> list(LibmapDTO pv) {
+//		return sqlSession.selectList("lib.list",pv);
+//	}
 
 	@Override
 	public List<LibmapDTO> list_match(String res_num) {
